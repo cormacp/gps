@@ -108,6 +108,7 @@ A single GPS node object, describing coordinates and timestamp data
 * y_pos (float): y coordinate of GpsNode
 * timestamp (int): timestamp representation of GpsNode
 
+---
 
 ### get_distance
 ```python
@@ -124,6 +125,7 @@ Uses cartesian formula to obtain the distance to a destination point:
 #### Returns:
 * float: distance from the GpsNode to the destination point
 
+---
 
 ### get_time_difference
 ```python
@@ -150,6 +152,7 @@ A GPS route object, comprising multiple GpsNode objects
 #### Attributes:
 * node_list (node_list): A list of valid GpsNode objects
 
+---
 
 ### prune_outlier_nodes
 ```python
@@ -171,6 +174,7 @@ For example, given 2 nodes A and B, if they:
 #### Returns:
 * integer count of nodes Removed
 
+---
 
 ### read_nodes_from_csv
 ```python
@@ -183,6 +187,7 @@ member variable GpsRoute.node_list
 #### Args:
 * file_path (str): Input path for data point CSV source
 
+---
 
 ### read_nodes_from_list
 ```python
