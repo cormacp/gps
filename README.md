@@ -50,6 +50,27 @@ optional arguments:
                         threshold avg. speed for data point pruning
 ```
 
+Verbose output includes detailed node data and reporting:
+
+```
+(gps) bash-3.2$ python3 validate_route.py -v True
+INFO:root:Parsed 227 data points from file data/data_points.csv
+DEBUG:root:Pruning gps nodes with an average speed threshold of 100 units
+DEBUG:root:Node 1: 	speed : 8.46 	dist : 42.32 	time : 5 	51.4984, -0.1604
+DEBUG:root:Node 2: 	speed : 5.96 	dist : 29.79 	time : 5 	51.4982, -0.1606
+...
+DEBUG:root:Node 74: 	speed : 425.21 	dist : 2551.27 	time : 6 	51.5114, -0.1756
+DEBUG:root:Node 74 will be pruned
+DEBUG:root:Node 75: 	speed : 9.05 	dist : 99.6 	time : 11 	51.4988, -0.1546
+...
+DEBUG:root:Node 91: 	speed : 0.0 	dist : 0.0 	time : 5 	51.5002, -0.1504
+DEBUG:root:Node 92: 	speed : 266.28 	dist : 2662.84 	time : 10 	51.5115, -0.1745
+DEBUG:root:Node 92 will be pruned
+...
+DEBUG:root:Node 226: 	speed : 5.19 	dist : 46.75 	time : 9 	51.5298, -0.1156
+INFO:root:Removed 6 invalid gps nodes
+INFO:root:Wrote pruned GPS data to data/pruned_data_points.csv
+```
 ## Unit Tests
 
 ---
