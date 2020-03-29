@@ -82,8 +82,8 @@ platform darwin -- Python 3.7.7, pytest-5.4.1, py-1.8.1, pluggy-0.13.1
 rootdir: /Users/cormacphelan/Dropbox/code/python/gps
 collected 31 items
 
-tests/test_gps_node.py ..............                                      [ 45%]
-tests/test_gps_route.py .................                                  [100%]
+tests/test_gps_node.py ..............  [ 45%]
+tests/test_gps_route.py .................   [100%]
 
 ============== 31 passed in 0.15s ===========
 ```
