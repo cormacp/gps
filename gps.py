@@ -154,6 +154,7 @@ class GpsRoute:
                 else:
                     window = 1
 
+        # Prune all invalid nodes, in-place
         nodes_for_pruning.sort(reverse=True)
         for node_idx in nodes_for_pruning:
             self.node_list.pop(node_idx)
