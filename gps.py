@@ -4,6 +4,14 @@ import math
 
 
 class GpsNode:
+    """
+    A single GPS node object
+
+    Attributes:
+        x_pos (float): x coordinate of GpsNode
+        y_pos (float): y coordinate of GpsNode
+        timestamp (int): timestamp representation of GpsNode
+    """
     def __init__(self, x_pos: float = 0.0, y_pos: float = 0.0, timestamp: int = 0):
         """
         Args:
@@ -61,7 +69,17 @@ class GpsNode:
 
 
 class GpsRoute:
+    """
+    A GPS route object, comprising multiple GpsNode objects
+
+    Attributes:
+        node_list (node_list): A list of valid GpsNode objects
+    """
     def __init__(self, node_list: list = []):
+        """
+        Args:
+            node_list (node_list): A list of valid GpsNode objects
+        """
         self.node_list = node_list
 
     def read_nodes_from_csv(self, file_path: str) -> bool:
@@ -106,7 +124,7 @@ class GpsRoute:
 
     def prune_outlier_nodes(self, speed_threshold: int = 100) -> int:
         """
-        Prune a route for potentially erroneous nodes.
+        Prunes a route for potentially erroneous nodes.
         Nodes will be pruned according to the combination of their distance and
         their timestamp (average speed).
         For example, given 2 nodes A and B, if they:
@@ -118,7 +136,7 @@ class GpsRoute:
         Args:
             speed_threshold (int): Limit for valid average speeds.
 
-        returns
+        Returns:
             integer count of nodes removed
         """
         logging.debug(f"Pruning gps nodes with an average speed threshold of {speed_threshold} units")
