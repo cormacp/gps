@@ -10,6 +10,7 @@ coverage = "*"
 ipdb = "*"
 pytest = "*"
 flake8 = "*"
+pydoc-markdown = "*"
 
 [requires]
 python_version = "3.7"
