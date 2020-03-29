@@ -20,9 +20,14 @@ def main():
         "-o", "--output", dest="output_file",
         help="data point output path", default="data/pruned_data_points.csv"
     )
+    parser.add_argument(
+        "-t", "--threshold", dest="threshold",
+        help="threshold avg. speed for data point pruning", default=100
+    )
     args = parser.parse_args()
     source_data = args.source_data
     output_path = args.output_file
+    threshold = int(args.threshold)
     if args.verbose_mode:
         logging.basicConfig(level=logging.DEBUG)
     else:
@@ -34,7 +39,7 @@ def main():
     logging.info(f"Parsed {len(route.node_list)} data points from file {source_data}")
 
     # Prune outlier data points
-    removal_count = route.prune_outlier_nodes()
+    removal_count = route.prune_outlier_nodes(threshold)
     logging.info(f"Removed {removal_count} invalid gps nodes")
 
     # Write new pruned Gps data points to disk
