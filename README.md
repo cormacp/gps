@@ -2,14 +2,20 @@
 
 A set of classes for reading, validating and pruning GPS point data
 
+## Installation
+
+## Running
+
+## Unit Tests
+
 ---
 
-## GpsNode
+## GpsNode Class
 ```python
 GpsNode(self, x_pos: float = 0.0, y_pos: float = 0.0, timestamp: int = 0)
 ```
 
-A single GPS node object
+A single GPS node object, describing coordinates and timestamp data
 
 #### Attributes:
 * x_pos (float): x coordinate of GpsNode
@@ -48,7 +54,7 @@ Obtain the timestamp difference to a destination point
 
 ---
 
-## GpsRoute
+## GpsRoute Class
 ```python
 GpsRoute(self, node_list: list = [])
 ```
