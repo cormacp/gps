@@ -59,6 +59,27 @@ A GPS route object, comprising multiple GpsNode objects
 * node_list (node_list): A list of valid GpsNode objects
 
 
+### prune_outlier_nodes
+```python
+GpsRoute.prune_outlier_nodes(speed_threshold: int = 100)
+```
+
+Prunes a route for potentially erroneous nodes.
+Nodes will be pruned according to the combination of their distance and
+their timestamp (average speed).
+For example, given 2 nodes A and B, if they:
+    - are distant and have widely-separated timestamps: B IS VALID
+    - are distant and have narrowly-separated timestamps: B IS NOT VALID
+    - are close and have widely-separated timestamps: B IS VALID
+    - are close and have narrowly-separated timestamps: B IS VALID
+
+#### Args:
+* speed_threshold (int): Limit for valid average speeds.
+
+#### Returns:
+* integer count of nodes Removed
+
+
 ### read_nodes_from_csv
 ```python
 GpsRoute.read_nodes_from_csv(file_path: str)
@@ -81,24 +102,3 @@ member variable GpsRoute.node_list
 
 #### Args:
 * input_data (list): A list of valid GpsNode objects
-
-
-### prune_outlier_nodes
-```python
-GpsRoute.prune_outlier_nodes(speed_threshold: int = 100)
-```
-
-Prunes a route for potentially erroneous nodes.
-Nodes will be pruned according to the combination of their distance and
-their timestamp (average speed).
-For example, given 2 nodes A and B, if they:
-    - are distant and have widely-separated timestamps: B IS VALID
-    - are distant and have narrowly-separated timestamps: B IS NOT VALID
-    - are close and have widely-separated timestamps: B IS VALID
-    - are close and have narrowly-separated timestamps: B IS VALID
-
-#### Args:
-* speed_threshold (int): Limit for valid average speeds.
-
-#### Returns:
-* integer count of nodes removed
