@@ -26,7 +26,7 @@ Without supplying additional arguments, this will validate and prune the set of 
 
 Sample output:
 ```
-python3 validate_route.py
+$ python3 validate_route.py
 INFO:root:Parsed 227 data points from file data/data_points.csv
 INFO:root:Removed 6 invalid gps nodes
 INFO:root:Wrote pruned GPS data to data/pruned_data_points.csv
@@ -35,6 +35,7 @@ INFO:root:Wrote pruned GPS data to data/pruned_data_points.csv
 However, all aspects of the validation can be customised with the following command line arguments:
 
 ```
+$ python3 validate_route.py --help
 usage: validate_route.py [-h] [-f SOURCE_DATA] [-v VERBOSE_MODE]
                          [-o OUTPUT_FILE] [-t THRESHOLD]
 
@@ -50,7 +51,7 @@ optional arguments:
                         threshold avg. speed for data point pruning
 ```
 
-Verbose output includes detailed node data and reporting:
+For example, the verbose output option includes detailed node data and reporting:
 
 ```
 (gps) bash-3.2$ python3 validate_route.py -v True
@@ -71,6 +72,7 @@ DEBUG:root:Node 226: 	speed : 5.19 	dist : 46.75 	time : 9 	51.5298, -0.1156
 INFO:root:Removed 6 invalid gps nodes
 INFO:root:Wrote pruned GPS data to data/pruned_data_points.csv
 ```
+
 ## Unit Tests
 
 Use PyTest to run unit tests for the GPS classes. All tests are contained in the ``/tests`` directory of this repo.
