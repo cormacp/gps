@@ -2,6 +2,8 @@
 
 A set of classes for reading, validating and pruning GPS point data
 
+---
+
 ## GpsNode
 ```python
 GpsNode(self, x_pos: float = 0.0, y_pos: float = 0.0, timestamp: int = 0)
@@ -44,6 +46,7 @@ Obtain the timestamp difference to a destination point
 #### Returns:
 * int: time difference between the GpsNode and the destination point
 
+---
 
 ## GpsRoute
 ```python
