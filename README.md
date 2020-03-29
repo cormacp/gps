@@ -160,13 +160,15 @@ GpsRoute.prune_outlier_nodes(speed_threshold: int = 100)
 ```
 
 Prunes a route for potentially erroneous nodes.
+
 Nodes will be pruned according to the combination of their distance and
 their timestamp (average speed).
+
 For example, given 2 nodes A and B, if they:
-    - are distant and have widely-separated timestamps: B IS VALID
-    - are distant and have narrowly-separated timestamps: B IS NOT VALID
-    - are close and have widely-separated timestamps: B IS VALID
-    - are close and have narrowly-separated timestamps: B IS VALID
+* are distant and have widely-separated timestamps: B IS VALID
+* are distant and have narrowly-separated timestamps: B IS NOT VALID
+* are close and have widely-separated timestamps: B IS VALID
+* are close and have narrowly-separated timestamps: B IS VALID
 
 #### Args:
 * speed_threshold (int): Limit for valid average speeds.
