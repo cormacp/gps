@@ -150,7 +150,7 @@ GpsRoute(self, node_list: list = [])
 A GPS route object, comprising multiple GpsNode objects
 
 #### Attributes:
-* node_list (node_list): A list of valid GpsNode objects
+* node_list (list): A list of valid GpsNode objects
 
 ---
 
