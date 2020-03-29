@@ -10,6 +10,13 @@ GpsNode(self,
         timestamp: int = 0)
 ```
 
+A single GPS node object
+
+Attributes:
+    x_pos (float): x coordinate of GpsNode
+    y_pos (float): y coordinate of GpsNode
+    timestamp (int): timestamp representation of GpsNode
+
 
 ### get_distance
 ```python
@@ -46,6 +53,11 @@ Returns:
 GpsRoute(self, node_list: list = [])
 ```
 
+A GPS route object, comprising multiple GpsNode objects
+
+Attributes:
+    node_list (node_list): A list of valid GpsNode objects
+
 
 ### read_nodes_from_csv
 ```python
@@ -76,7 +88,7 @@ Args:
 GpsRoute.prune_outlier_nodes(speed_threshold: int = 100)
 ```
 
-Prune a route for potentially erroneous nodes.
+Prunes a route for potentially erroneous nodes.
 Nodes will be pruned according to the combination of their distance and
 their timestamp (average speed).
 For example, given 2 nodes A and B, if they:
@@ -88,5 +100,6 @@ For example, given 2 nodes A and B, if they:
 Args:
     speed_threshold (int): Limit for valid average speeds.
 
-returns
+Returns:
     integer count of nodes removed
+
