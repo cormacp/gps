@@ -3,7 +3,7 @@
 A set of classes for reading, validating and pruning GPS point data
 
 ## Installation
-No additional packages or utilities are required to run the route validation script and GPS classes.
+No additional packages or utilities are required to run the route validation script and import the GPS classes.
 
 However, if you wish to run additional tools against these classes (e.g. measure test coverage, generate docs, validate style), a Pipfile has been included to resolve requirements, and can be used as follows:
 
@@ -24,6 +24,14 @@ python3 validate_route.py
 
 Without supplying additional arguments, this will validate and prune the set of sample data points included in the ``data/data_points.csv`` file, and write a new set of pruned data points to ``data/pruned_data_points``
 
+Sample output:
+```
+python3 validate_route.py
+INFO:root:Parsed 227 data points from file data/data_points.csv
+INFO:root:Removed 6 invalid gps nodes
+INFO:root:Wrote pruned GPS data to data/pruned_data_points.csv
+```
+
 However, all aspects of the validation can be customised with the following command line arguments:
 
 ```
@@ -43,6 +51,10 @@ optional arguments:
 ```
 
 ## Unit Tests
+
+---
+
+# Class DocStrings
 
 ---
 
