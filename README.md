@@ -94,8 +94,6 @@ For code coverage metrics, run the ``coverage`` package, or view the pre-generat
 
 # Class DocStrings
 
----
-
 ## GpsNode Class
 ```python
 GpsNode(self, x_pos: float = 0.0, y_pos: float = 0.0, timestamp: int = 0)
