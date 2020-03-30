@@ -170,6 +170,10 @@ For example, given 2 nodes A and B, if they:
 * are close and have widely-separated timestamps: B IS VALID
 * are close and have narrowly-separated timestamps: B IS VALID
 
+The error tolerance is tunable using the ``speed_threshold`` argument, but is set to 100 'average units of speed' for the purposes of this exercise.
+
+Note that the ``speed`` metric is an arbitrarily calculated unit, with a scale that was chosen to broadly suit the input data. In a real-world system, this metric would be more carefully specified and derived from the conventions of the input data.
+
 #### Args:
 * speed_threshold (int): Limit for valid average speeds.
 
