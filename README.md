@@ -25,7 +25,7 @@ python3 validate_route.py
 Without supplying additional arguments, this will validate and prune the set of sample data points included in the ``data/data_points.csv`` file, and write a new set of pruned data points to ``data/pruned_data_points``.
 
 Data points will be pruned according to the combination of their distance and
-their timestamp difference (i.e. a derived average speed).
+their timestamp difference (i.e. a derived 'average speed' between data points).
 
 Sample output:
 ```
