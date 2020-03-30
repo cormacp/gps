@@ -25,11 +25,7 @@ python3 validate_route.py
 Without supplying additional arguments, this will validate and prune the set of sample data points included in the ``data/data_points.csv`` file, and write a new set of pruned data points to ``data/pruned_data_points``.
 
 Data points will be pruned according to the combination of their distance and
-their timestamp difference (average speed).
-
-The error tolerance is tunable using the ``speed_threshold`` argument, but is set to 100 'average units of speed' for the purposes of this exercise.
-
-Note that this 'speed' metric is an arbitrarily calculated unit, with a scale that was chosen to broadly suit the input data. In a real-world system, this metric would be more carefully specified and derived from the conventions of the input data.
+their timestamp difference (i.e. a derived average speed).
 
 Sample output:
 ```
@@ -39,7 +35,11 @@ INFO:root:Removed 6 invalid gps nodes
 INFO:root:Wrote pruned GPS data to data/pruned_data_points.csv
 ```
 
-However, all aspects of the validation can be customised with the following command line arguments:
+The error tolerance is tunable using the ``speed_threshold`` argument, but is set to 100 'average units of speed' for the purposes of this exercise.
+
+Note that this 'speed' metric is an arbitrarily calculated unit, with a scale that was chosen to broadly suit the input data. In a real-world system, this metric would be more carefully specified and derived from the conventions of the input data.
+
+All aspects of the validation can be customised with the following command line arguments:
 
 ```
 $ python3 validate_route.py --help
